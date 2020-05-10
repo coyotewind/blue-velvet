@@ -1,1 +1,188 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
 
+html {
+    font-size: 24px;
+    font-family: 'Unica One', cursive;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 1rem 0;
+}
+
+#app h1 {
+    color: #1A1A1A;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+/* --- globals --- */
+
+.calculator {
+
+    /* grid calc */
+    display: grid;
+    grid-template-rows: 180px repeat(12, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    background: #81899B;
+    border: 4px solid #81899B;
+    border-radius: 12px;
+    box-shadow: 2px 2px 10px -6px #1A1A1A;
+    min-height: 720px;
+    overflow: hidden;
+    padding: 20px;
+    width: 480px;
+
+}
+
+    .display {
+        /* grid display */
+        display: grid;
+        grid-template-rows: 50px 50px 50px;
+        grid-template-columns: repeat(5, 1fr);
+        /* grid items calc */
+        grid-column: 1 / 6;
+        grid-row: 1 / 4;
+        background: #EFEFEF;
+        border-radius: 12px;
+        box-shadow: inset 2px 2px 10px -6px #1A1A1A, inset -2px -2px 10px -6px #1A1A1A;
+        height: 180px;
+        padding: 15px;
+    }
+
+        .held-label,
+        .held-value {
+            /* grid items display */
+            grid-column: 1 / 6;
+        }
+
+        .held-label {
+            /* grid items display */
+            grid-row: 1;
+            font-size: 26px;
+            padding-top: 5px;
+            text-decoration: underline;
+
+        }
+        
+        .held-value {
+            /* grid items display */
+            grid-row: 2;
+            color: #1A1A1A;
+            font-size: 40px;
+        }
+
+        .next-operation,
+        .next-value {
+            /* grid items display */
+            grid-row: 3;
+        }
+
+        .next-operation {
+            /* grid items display */
+            grid-column: 1;
+            color: #1A1A1A;
+            font-size: 40px;
+        }
+
+        .next-value {
+            /* grid items display */
+            grid-column: 2 / 6;
+            font-size: 40px;
+            text-align: right;
+        }
+
+    .controls {
+        /* grid controls */
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 12px;
+        /* grid items for calc */
+        grid-column: 1 / 6;
+        grid-row: 2 / 14;
+    }
+
+        .memory, .operations, .digits, .extra {
+            display: grid;
+            grid-gap: 12px;
+        }
+
+        .memory {
+            /* grid memory */
+            grid-template-columns: 2fr 2fr;
+            /* grid items controls */
+            grid-column: 1 / 4;
+            grid-row: 1;
+        }
+
+        .operations {
+            /* grid operations */
+            grid-template-rows: repeat(5, 1fr);
+            /* grid items controls */
+            grid-column: 4 / 5;
+            grid-row: 1 / 6;
+        }
+
+        .digits {
+            /* grid digits */
+            grid-template-rows: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            /* grid items controls */
+            grid-column: 1 / 4;
+            grid-row: 2 / 6;
+        }
+
+        .extra {
+            /* grid memory */
+            grid-template-columns: 1fr 1fr 1fr;
+            /* grid items controls */
+            grid-column: 1 / 5;
+            grid-row: 6;
+        }
+
+        .digits button:last-of-type {
+            grid-column: 2 / 4;
+        }
+
+.calculator button {
+    background-color: #EFEFEF;
+    border-radius: 8px;
+    box-shadow: 4px 4px 8px -4px #000000;
+    color: #1A1A1A;
+    cursor: pointer;
+    font-family: 'Coda',sans-serif;
+    font-size: 3vh;
+    font-weight: 900;
+}
+
+    .memory button,
+    .extra button {
+        background: khaki;
+        font-size: 2vh;
+    }
+
+        .operations button {
+            background-color: #FFBB22;
+        }
+
+        .operations button.equals {
+            background-color: #FF5555;
+        }
+
+sup {
+    font-size: 0.7em;
+}
+
+    
