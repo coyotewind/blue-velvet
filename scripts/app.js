@@ -15,6 +15,22 @@ $('.digits button').click(function () {
     updateDisplay();
 });
 
+$('.pi').click(function () {
+    if (nextValue === null) {
+        nextValue = 0;
+    }
+    nextValue = Math.PI;
+    updateDisplay();
+});
+
+$('.plus-minus').click(function () {
+    if (nextValue === null) {
+        nextValue = 0;
+    }
+    nextValue = (nextValue * -1);
+    updateDisplay();
+});
+
 // user input events on operators
 $('.add').click(function () {
     setHeldOperation(add);
@@ -54,6 +70,12 @@ $('.power').click(function () {
 
 $('.plus-minus').click(function () {
     setHeldOperation(plusminus);
+    $('.next-value').text(nextValue);
+    updateDisplay();
+});
+
+$('.pi').click(function () {
+    setHeldOperation(pi);
     $('.next-value').text(nextValue);
     updateDisplay();
 });
@@ -120,16 +142,6 @@ function sqrt() {
 
 function power(x, y) {
     return Math.pow(Number(x), Number(y));
-}
-
-function plusminus() {
-  
-  if(nextValue > 0) {
-    return (Number(nextValue) * -1);
-   }
-  else if (nextValue < 0) { 
-    return (Number(heldValue)) * -1;
-  }
 }
 
 // make functions to clear values
