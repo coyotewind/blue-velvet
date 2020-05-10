@@ -129,10 +129,10 @@ html {
 
         .operations {
             /* grid operations */
-            grid-template-rows: repeat(5, 1fr);
+            grid-template-rows: repeat(6, 1fr);
             /* grid items controls */
-            grid-column: 4 / 5;
-            grid-row: 1 / 6;
+            grid-column: 4 / 6;
+            grid-row: 1 / 7;
         }
 
         .digits {
@@ -148,7 +148,7 @@ html {
             /* grid memory */
             grid-template-columns: 1fr 1fr 1fr;
             /* grid items controls */
-            grid-column: 1 / 5;
+            grid-column: 1 / 4;
             grid-row: 6;
         }
 
