@@ -21,7 +21,7 @@ $('.decimal').click(function () {
     if (nextValue === null) {
         nextValue = 0;
     }
-    // prevents second decimal point s
+    // prevents second decimal point
     if (nextValue == 0) {
         nextValue = nextValue + $(this).text();
     } else {
@@ -42,10 +42,10 @@ $('.pi').click(function () {
     updateDisplay();
 });
 
-$('.pi').click(function () {
-    $('.next-value').text(nextValue);
-    updateDisplay();
-});
+// $('.pi').click(function () {
+//     $('.next-value').text(nextValue);
+//     updateDisplay();
+// });
 
 $('.plus-minus').click(function () {
     if (nextValue === null) {
@@ -55,10 +55,10 @@ $('.plus-minus').click(function () {
     updateDisplay();
 });
 
-$('.plus-minus').click(function () {
-    $('.next-value').text(nextValue);
-    updateDisplay();
-});
+// $('.plus-minus').click(function () {
+//     $('.next-value').text(nextValue);
+//     updateDisplay();
+// });
 
 $('.inverse').click(function () {
     if (nextValue === null) {
@@ -68,11 +68,10 @@ $('.inverse').click(function () {
     updateDisplay();
 });
 
-$('.inverse').click(function () {
-    setHeldOperation(inverse);
-    $('.next-value').text(nextValue);
-    updateDisplay();
-});
+// $('.inverse').click(function () {
+//     $('.next-value').text(nextValue);
+//     updateDisplay();
+// });
 
 // functions to update display after computations
 
@@ -125,7 +124,7 @@ function showValue(location, value) {
         $(location).text('');
         //handles divided by zero
     } else if (value === Infinity) {
-        $(location).text('Cannot Divide By Zero');
+        $(location).text('No Can Do Amigo');
     } else {
         $(location).text(Number(value));
     }
