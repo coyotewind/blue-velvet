@@ -1,14 +1,25 @@
+/* reset stylesheet */
+
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     border: none;
+    outline: none !important;
 }
+
+/* structural page elements */
 
 html {
     font-size: 24px;
-    font-family: 'Unica One', cursive;
+    font-family: 'Unica One';
 }
+
+sub, sup {
+    font-size: 0.8em;
+}
+
 
 #app {
     display: flex;
@@ -20,169 +31,178 @@ html {
 }
 
 #app h1 {
-    color: #1A1A1A;
+    color: #1a1a1a;
     font-size: 2rem;
     letter-spacing: 1px;
     margin-bottom: 10px;
 }
 
-/* --- globals --- */
+/* --- the calculator top level grid --- */
 
 .calculator {
-
     /* grid calc */
     display: grid;
     grid-template-rows: 180px repeat(12, 1fr);
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 20px;
-    background: #81899B;
-    border: 4px solid #81899B;
+    background: #81899b;
+    border: 4px solid #81899b;
     border-radius: 12px;
-    box-shadow: 2px 2px 10px -6px #1A1A1A;
+    box-shadow: 2px 2px 10px -6px #1a1a1a;
     min-height: 720px;
     overflow: hidden;
     padding: 20px;
     width: 480px;
-
 }
 
-    .display {
-        /* grid display */
-        display: grid;
-        grid-template-rows: 50px 50px 50px;
-        grid-template-columns: repeat(5, 1fr);
-        /* grid items calc */
-        grid-column: 1 / 6;
-        grid-row: 1 / 4;
-        background: #EFEFEF;
-        border-radius: 12px;
-        box-shadow: inset 2px 2px 10px -6px #1A1A1A, inset -2px -2px 10px -6px #1A1A1A;
-        height: 180px;
-        padding: 15px;
-    }
+/* the display grid  */
 
-        .held-label,
-        .held-value {
-            /* grid items display */
-            grid-column: 1 / 6;
-        }
+.display {
+    /* grid display */
+    display: grid;
+    grid-template-rows: 50px 50px 50px;
+    grid-template-columns: repeat(5, 1fr);
+    /* grid items calc */
+    grid-column: 1 / 6;
+    grid-row: 1 / 4;
+    background: #efefef;
+    border-radius: 12px;
+    box-shadow: inset 2px 2px 10px -6px #1a1a1a, inset -2px -2px 10px -6px #1a1a1a;
+    height: 180px;
+    padding: 15px;
+}
 
-        .held-label {
-            /* grid items display */
-            grid-row: 1;
-            font-size: 26px;
-            padding-top: 5px;
-            text-decoration: underline;
+.held-label,
+.held-value {
+    /* grid items display */
+    grid-column: 1 / 6;
+}
 
-        }
-        
-        .held-value {
-            /* grid items display */
-            grid-row: 2;
-            color: #1A1A1A;
-            font-size: 40px;
-        }
+.held-label {
+    /* grid items display */
+    grid-row: 1;
+    font-family: 'Coda';
+    font-size: 24px;
+    padding-top: 5px;
+    text-decoration: underline;
+}
 
-        .next-operation,
-        .next-value {
-            /* grid items display */
-            grid-row: 3;
-        }
+.held-value {
+    /* grid items display */
+    grid-row: 2;
+    color: #1a1a1a;
+    font-size: 36px;
+}
 
-        .next-operation {
-            /* grid items display */
-            grid-column: 1;
-            color: #1A1A1A;
-            font-size: 40px;
-        }
+.next-operation,
+.next-value {
+    /* grid items display */
+    grid-row: 3;
+}
 
-        .next-value {
-            /* grid items display */
-            grid-column: 2 / 6;
-            font-size: 40px;
-            text-align: right;
-        }
+.next-operation {
+    /* grid items display */
+    grid-column: 1;
+    color: #1a1a1a;
+    font-size: 32px;
+}
 
-    .controls {
-        /* grid controls */
-        display: grid;
-        grid-template-rows: repeat(6, 1fr);
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 12px;
-        /* grid items for calc */
-        grid-column: 1 / 6;
-        grid-row: 2 / 14;
-    }
+.next-value {
+    /* grid items display */
+    grid-column: 2 / 6;
+    font-size: 36px;
+    text-align: right;
+}
 
-        .memory, .operations, .digits, .extra {
-            display: grid;
-            grid-gap: 12px;
-        }
+/* the controls grids */
 
-        .memory {
-            /* grid memory */
-            grid-template-columns: 2fr 2fr;
-            /* grid items controls */
-            grid-column: 1 / 4;
-            grid-row: 1;
-        }
+.controls {
+    /* grid controls */
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 12px;
+    /* grid items for calc */
+    grid-column: 1 / 6;
+    grid-row: 2 / 14;
+}
 
-        .operations {
-            /* grid operations */
-            grid-template-rows: repeat(6, 1fr);
-            /* grid items controls */
-            grid-column: 4 / 6;
-            grid-row: 1 / 7;
-        }
+.memory,
+.operations,
+.digits,
+.extra {
+    display: grid;
+    grid-gap: 12px;
+}
 
-        .digits {
-            /* grid digits */
-            grid-template-rows: repeat(4, 1fr);
-            grid-template-columns: repeat(3, 1fr);
-            /* grid items controls */
-            grid-column: 1 / 4;
-            grid-row: 2 / 6;
-        }
+.memory {
+    /* grid memory */
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid items controls */
+    grid-column: 1 / 4;
+    grid-row: 1;
+}
 
-        .extra {
-            /* grid memory */
-            grid-template-columns: 1fr 1fr 1fr;
-            /* grid items controls */
-            grid-column: 1 / 4;
-            grid-row: 6;
-        }
+.operations {
+    /* grid operations */
+    grid-template-rows: repeat(5, 1fr);
+    /* grid items controls */
+    grid-column: 4 / 5;
+    grid-row: 1 / 6;
+}
 
-        .digits button:last-of-type {
-            grid-column: 2 / 4;
-        }
+.digits {
+    /* grid digits */
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    /* grid items controls */
+    grid-column: 1 / 4;
+    grid-row: 2 / 6;
+}
+
+.extra {
+    /* grid memory */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* grid items controls */
+    grid-column: 1 / 5;
+    grid-row: 6;
+}
+
+/* the buttons */
+
+.digits button:last-of-type {
+    grid-column: 2 / 4;
+}
 
 .calculator button {
-    background-color: #EFEFEF;
+    background-color: #DFDFDF;
     border-radius: 8px;
-    box-shadow: 4px 4px 8px -4px #000000;
-    color: #1A1A1A;
+    box-shadow: 4px 4px 8px -4px #3A3A3A;
+    color: #1a1a1a;
     cursor: pointer;
-    font-family: 'Coda',sans-serif;
-    font-size: 3vh;
-    font-weight: 900;
+    font-family: 'monospace', sans-serif;
+    font-size: 2.5vh;
+    font-weight: 500;
 }
 
-    .memory button,
-    .extra button {
-        background: khaki;
-        font-size: 2vh;
-    }
-
-        .operations button {
-            background-color: #FFBB22;
-        }
-
-        .operations button.equals {
-            background-color: #FF5555;
-        }
-
-sup {
-    font-size: 0.7em;
+.calculator button:hover {
+    box-shadow: 3px 3px 4px 0 #3A3A3A;
 }
 
-    
+.memory button {
+    background: khaki;
+    font-size: 1.8vh;
+}
+
+.operations button {
+    background-color: #ffbb22;
+}
+
+.operations button.equals {
+    background-color: #ff5555;
+}
+
+.extra button {
+    background: lightskyblue;
+    font-size: 2.5vh;
+}
