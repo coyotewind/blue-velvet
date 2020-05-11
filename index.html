@@ -16,32 +16,33 @@
 <body>
     <main id="app">
         
-        <h1>
-            Calculator
-        </h1>
+        <h1>Calculator</h1>
 
         <div class="calculator">
 
             <section class="display">
-                <div class="held-label">Running Total</div>
+                <div class="held-label">Total</div>
                 <div class="held-value"></div>
                 <div class="next-operation"></div>
                 <div class="next-value"></div>
             </section>
 
             <section class="controls">
+
                 <section class="memory">
-                    <button class="clear-all">CLEAR</button>
-                    <button class="clear-entry">CLEAR ENTRY</button>
+                    <button class="clear-all">C</button>
+                    <button class="clear-entry">CE</button>
+                    <button class="plus-minus">&plusmn;</button>
                 </section>
+
                 <section class="operations">
                     <button class="add">&plus;</button class="">
                     <button class="subtract">&minus;</button>
                     <button class="multiply">&times;</button>
-                    <button class="divide">/</button>
-                    <button class="plus-minus">+/-</button>
+                    <button class="divide">&divide;</button>
                     <button class="equals">&equals;</button>
                 </section>
+
                 <section class="digits">
                     <button>7</button>
                     <button>8</button>
@@ -55,11 +56,14 @@
                     <button class="decimal">.</button>
                     <button>0</button>
                 </section>
+
                 <section class="extra">
-                    <button class="sq-rt">√</button>
-                    <button class="power">(x<sup>y</sup>)</button>
-                    <button class="pi">π</button>
+                    <button class="sq-rt">&radic;</button>
+                    <button class="pi">&pi;</button>
+                    <button class="power">(x)<sup>y</sup></button>
+                    <button class="inverse"><sup>1</sup>/<sub>x</sub></button>
                 </section>
+                
             </section>
 
         </div>
