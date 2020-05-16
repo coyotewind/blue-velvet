@@ -191,7 +191,7 @@ sub, sup {
 
 .memory button {
     background: khaki;
-    font-size: 1.8vh;
+    font-size: 0.8;
 }
 
 .operations button {
@@ -204,5 +204,5 @@ sub, sup {
 
 .extra button {
     background: lightskyblue;
-    font-size: 2.5vh;
+    font-size: 1rem;
 }
