@@ -8,11 +8,10 @@
 ### What I Learned:
 
 - More complex JavaScript functions with math.
-- 
 
 ### What I am Proud Of:
 
-- Made some advanced function for caluclating things like square root and inverse operations
+- Made some advanced functions for caluclating things like square root and inverse operations.
 
 ### How I Would Uplevel It:
 
